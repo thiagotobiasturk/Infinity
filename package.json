@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/thiagotobiasturk/Infinity#readme",
   "devDependencies": {
+    "@types/cucumber": "^7.0.0",
+    "cypress": "^13.7.1",
     "playwright": "^1.42.1",
     "typescript": "^5.4.3"
   }

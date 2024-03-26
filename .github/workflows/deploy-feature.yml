@@ -1,13 +1,28 @@
-name: Hola Mundo
+name: Hola Mundo con Hadolint
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - name: Checkout código
+        uses: actions/checkout@v2
 
-    - name: Saludo
-      run: echo "Hola Mundo"
+      - name: Instalar Hadolint
+        run: |
+          sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
+          sudo chmod +x /bin/hadolint
+
+      - name: Ejecutar Hadolint
+        run: hadolint --version
+
+      - name: Saludar
+        run: echo "Hola mundo desde GitHub Actions!"

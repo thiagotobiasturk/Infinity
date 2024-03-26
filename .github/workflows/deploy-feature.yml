@@ -1,28 +1,29 @@
-name: Hola Mundo con Hadolint
+name: Build and Test
 
 on:
   push:
     branches:
-      - main
+      - master  # Cambiar a main si tu rama principal se llama main
   pull_request:
     branches:
-      - main
+      - master  # Cambiar a main si tu rama principal se llama main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout código
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Instalar Hadolint
+      - name: Install Hadolint
         run: |
-          sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
-          sudo chmod +x /bin/hadolint
+          sudo apt-get update
+          sudo apt-get install -y hadolint
 
-      - name: Ejecutar Hadolint
-        run: hadolint --version
+      - name: Install other dependencies  # Agrega aquí otras dependencias si las tienes
+        run: |
+          npm install  # Por ejemplo, instalar dependencias de Node.js
 
-      - name: Saludar
-        run: echo "Hola mundo desde GitHub Actions!"
+      - name: Hello World
+        run: echo "Hello, World!"

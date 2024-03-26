@@ -1,12 +1,9 @@
-name: Build and Test
+name: CI
 
 on:
   push:
     branches:
-      - master  # Cambiar a main si tu rama principal se llama main
-  pull_request:
-    branches:
-      - master  # Cambiar a main si tu rama principal se llama main
+      - master
 
 jobs:
   build:
@@ -16,14 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
       - name: Install Hadolint
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y hadolint
+        run: npm install -g hadolint
 
-      - name: Install other dependencies  # Agrega aquí otras dependencias si las tienes
-        run: |
-          npm install  # Por ejemplo, instalar dependencias de Node.js
-
-      - name: Hello World
-        run: echo "Hello, World!"
+      - name: Run Hadolint
+        run: hadolint Dockerfile

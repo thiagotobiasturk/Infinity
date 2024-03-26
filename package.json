@@ -1,0 +1,23 @@
+{
+  "name": "infinity",
+  "version": "1.0.0",
+  "description": "This is a repository made up of Playwright-TS-PO-Web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagotobiasturk/Infinity.git"
+  },
+  "author": "Automation Armada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thiagotobiasturk/Infinity/issues"
+  },
+  "homepage": "https://github.com/thiagotobiasturk/Infinity#readme",
+  "devDependencies": {
+    "playwright": "^1.42.1",
+    "typescript": "^5.4.3"
+  }
+}

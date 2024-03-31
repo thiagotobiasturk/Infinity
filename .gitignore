@@ -1,0 +1,17 @@
+# Ignorar archivos generados automáticamente
+node_modules/
+dist/
+
+# Ignorar archivos de configuración local
+.env
+config.json
+
+# Ignorar archivos de compilación
+*.log
+*.class
+*.jar
+
+# Ignorar archivos de dependencias
+*.dll
+*.so
+*.dylib
